@@ -1,0 +1,16 @@
+#
+# bash functions file
+#
+
+# symlink from the main directory as .bash_functions
+# add the following to the ~/.bashrc file:
+#
+# if [ -f "${HOME}/.bash_functions" ]; then
+#   source "${HOME}/.bash_functions"
+# fi
+
+settitle ()
+{
+  echo -ne "\e]2;$@\a\e]1;$@\a";
+}
+
