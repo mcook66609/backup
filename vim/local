@@ -1,0 +1,3 @@
+" to implement, link from main directory
+" ln -s .backup/vim/local ~/.vimrc.local
+colorscheme solarized

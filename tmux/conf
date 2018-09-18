@@ -1,0 +1,75 @@
+#
+# Standardized TMUX config
+#
+# add the following line to the ~/.tmux.conf file:
+#     source-file .backup/tmux/conf
+
+# Set the maximum number of lines held in window history
+set -g history-limit 2048
+
+# Set the amount of time for status line message
+set -g display-time 3000
+
+# Renumber windows when a window is closed
+set-option -g renumber-windows on
+
+# Enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Terminal improvements
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+set-option -g set-titles-string "#S / #W"
+
+# Mouse controls
+set-option -g -q mouse on
+
+# Window
+setw -g mode-keys vi
+
+# default statusbar colors
+set -g status-bg colour235 #base02
+set -g status-fg colour136 #yellow
+set -g status-attr default
+
+# default window title colors
+setw -g window-status-fg colour244 #base0
+setw -g window-status-bg default
+
+# active window title colors
+setw -g window-status-current-bg default
+setw -g window-status-current-fg colour166
+setw -g window-status-current-attr bright
+
+# pane border
+set -g pane-border-fg colour235 #base02
+set -g pane-active-border-fg colour240 #base01
+
+# message text
+set -g message-bg colour235 #base02
+set -g message-fg colour166 #orange
+#set -g message-attr bold
+
+# Pane number display
+set-option -g display-panes-active-colour colour33 #blue
+set-option -g display-panes-colour colour166 #orange
+
+# clock
+setw -g clock-mode-colour colour64 #green
+
+set -g status-keys vi
+set -g status-justify centre
+set -g status-interval 1
+
+#set -g status-left "#[fg=white,bright,bg=blue]#[fg=green,bright,bg=blue][#S:#I:#P]#[default]"
+set -g status-left "#[default]#[fg=colour235,bright,bg=colour253][#S:#I:#P]#[default]"
+set -g status-right "#[default]#[fg=white][#[fg=colour64,bright]%Y-%m-%d #[fg=colour244]%I:%M:%S#[default]#[fg=white]]"
+
+
+################################################################################
+# Key bindings
+################################################################################
+# Reload the file with prefix R
+bind R source-file ~/.tmux.conf \; display "Reloaded!"
+
