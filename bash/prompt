@@ -1,0 +1,11 @@
+#
+# bash prompt
+#
+# ln -s .backup/bash/prompt ~/.bash_prompt
+# add the following to .bashrc
+#
+# if [ -f "${HOME}/.bash_prompt" ]; then
+#     source "${HOME}/.bash_prompt"
+# fi
+
+PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[94m\] \$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\e[0m\n\$ "
