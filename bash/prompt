@@ -9,3 +9,23 @@
 # fi
 
 PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[94m\] \$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\e[0m\n\$ "
+
+# download https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+if [ -x ~/.local/bin/git-prompt.sh ]; then
+    source ~/.local/bin/git-prompt.sh
+    PS1_OLD=${PS1}
+
+    # Show if there are unstaged (*) and/or staged (+) changes
+    export GIT_PS1_SHOWDIRTYSTATE=1
+
+    # Show if there is anything stashed ($)
+    export GIT_PS1_SHOWSTASHSTATE=1
+
+    # Show if there are untracked files (%)
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
+
+    # Show how we're tracking relative to upstream
+    export GIT_PS1_SHOWUPSTREAM="verbose"
+
+    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[94m\] \$(__git_ps1 \"(%s)\")\e[0m\n\$ "
+fi
