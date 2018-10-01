@@ -20,19 +20,12 @@ set -g visual-activity on
 # Terminal improvements
 set-window-option -g automatic-rename on
 set-option -g set-titles on
-set-option -g set-titles-string "#S / #W"
 
 # Mouse controls
 set-option -g -q mouse on
 
 # Window
 setw -g mode-keys vi
-
-# inactive window title format
-setw -g window-status-format "#I:#H[#W] "
-
-# active window title format
-setw -g window-status-current-format "#I:#H[#W] "
 
 set -g status-keys vi
 set -g status-justify centre
