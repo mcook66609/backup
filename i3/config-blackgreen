@@ -167,18 +167,11 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	colors {
-		background         #002b36
-		statusline         #839496
-		separator          #586e75
-		focused_workspace  #b58900 #b58900 #002b36
-		active_workspace   #586e75 #586e75 #002b36
-		inactive_workspace #586e75 #586e75 #002b36
-		urgent_workspace   #dc322f #dc322f #fdf6e3
-	}
 }
 
-#client.focused		#002b36 #586e75 #fdf6e3 #268bd2
-#client.focused_inactive	#002b36 #073642 #839496 #073642
-#client.unfocused	#002b36 #073642 #839496 #073642
-#client.ugent    	#002b36 #dc322f #fdf6e3 #002b36
+#
+# start processes at launch
+#
+
+# use compton for transparency
+exec --no-startup-id compton
