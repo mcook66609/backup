@@ -32,6 +32,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec xfce4-terminal
+#bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -168,6 +170,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        colors {
+            background         #002b36
+            statusline         #839496
+            separator          #586e75
+            focused_workspace  #b58900 #b58900 #002b36
+            active_workspace   #586e75 #586e75 #002b36
+            inactive_workspace #586e75 #586e75 #002b36
+            urgent_workspace   #dc322f #dc322f #fdf6e3
+        }
 }
 
 #
