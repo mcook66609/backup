@@ -1,4 +1,4 @@
-Unified Configuration Backup
+Unified Dotfiles
 ============================
 
 This directory comprises the git backup configuration for my personal
